@@ -6,16 +6,16 @@ This tool analyzes policy documents and generates deterministic Python code to e
 
 The workflow consists of two main steps:
 
-**step 1**:  
-Takes a policy document in Markdown format and an OpenAPI specification describing the available tools. For each tool, it generates a JSON file containing associated policies and examples of both compliance and violations.  
-These files can be reviewed and edited manually before proceeding to Step 2.  
-The OpenAPI document should describe agent tools and optionally include *read-only* tools that might be used to enforce policies. It’s important that each tool has:
+**build-time step 1**:  
+
+Takes a policy document in Markdown format and an OpenAPI specification describing the available tools. For each tool, it generates a JSON file containing associated policies and examples of both compliance and violations. These files can be reviewed and edited manually before proceeding to Step 2. The OpenAPI document should describe agent tools and optionally include read-only tools that might be used to enforce policies. It’s important that each tool has:
 - A proper `operation_id` matching the tool name
-- A detailed description
+- A detailed description of the tool and its functionality
 - Clearly defined input parameters and return types
 - Well-documented data models
 
-**step 2**:  
+**build-time step 2**:  
+
 Uses the output from Step 1 and the OpenAPI spec to generate Python code that enforces each tool’s policies.
 
 ---
@@ -58,4 +58,13 @@ Uses the output from Step 1 and the OpenAPI spec to generate Python code that en
 
 Run main() in `tests/run_tau2_airline.py` for generating tool guards for the tau-bench airline domain.
 
+## Citation
 
+```
+@article{zwerdling2025towards,
+  title={Towards Enforcing Company Policy Adherence in Agentic Workflows},
+  author={Zwerdling, Naama and Boaz, David and Rabinovich, Ella and Uziel, Guy and Amid, David and Anaby-Tavor, Ateret},
+  journal={arXiv preprint arXiv:2507.16459},
+  year={2025}
+}
+```
