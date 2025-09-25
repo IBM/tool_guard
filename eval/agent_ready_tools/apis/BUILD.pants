@@ -1,0 +1,12 @@
+python_sources(
+    name = "apis",
+    # Skip Flake8 for all non-test files in this folder.
+    skip_flake8 = True,
+    # Skip pylint for all non-test files in this folder.
+    skip_pylint = True,
+    sources = [
+        "**/*.py",
+        "!**/*_test.py",
+        "!**/test_*.py",
+    ],
+)
