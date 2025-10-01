@@ -47,6 +47,11 @@ Uses the output from Step 1 and the OpenAPI spec to generate Python code that en
 
    ```bash
    pip install -r requirements.txt
+
+   # we need tau2 airline domain and tools
+   git clone git@github.com:sierra-research/tau2-bench.git
+   cd tau2
+   pip install -e .
    ```
 
 4. **Create a `.env` file:**
